@@ -1,0 +1,17 @@
+Xcursor.size: 16W
+URxvt.urgentOnBell: true
+URxvt.scrollBar: false
+URxvt.font: xft:hack:size=14
+URxvt.url-launcher: /usr/bin/google-chrome
+URxvt.matcher.button: 1
+URxvt.perl-ext-common: default,matcher,vtw:wheel,resize-font,selection-to-clipboard
+
+rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
+rofi.lines: 5
+rofi.width: 100 
+rofi.modi: window,run
+rofi.terminal: urxvt 
+rofi.case-sensitive: false
+rofi.eh: 2
+rofi.padding: 800 
+rofi.hide-scrollbar: true

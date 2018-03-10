@@ -1,0 +1,3 @@
+
+wal -R
+export FOO=bar2

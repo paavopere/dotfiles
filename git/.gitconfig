@@ -10,9 +10,11 @@
   autocrlf = input
 [alias]
   amend = commit --amend --reuse-message=HEAD
-  br = branch
-  ci = commit
-  co = checkout
-  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit 
-  p = push
-  st = status
+  br    = branch
+  ci    = commit
+  co    = checkout
+  l     = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit 
+  p     = push
+  st    = status
+  f     = fetch
+  pl    = pull

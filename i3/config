@@ -66,16 +66,16 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # workspace variables
-set $ws1 "1: "
-set $ws2 "2: " 
-set $ws3 "3: DataGrip"
-set $ws4 "4: "
-set $ws5 "5: "
-set $ws6 "6: "
-set $ws7 "7: "
-set $ws8 "8: "
-set $ws9 "9: "
-set $ws0 "0: "
+set $ws1 "1"
+set $ws2 "2" 
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws0 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -102,7 +102,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0
 
 # assign workspaces
-assign [class="jetbrains-datagrip"] $ws3
+# assign [class="jetbrains-datagrip"] $ws3
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -167,7 +167,46 @@ bar {
 
 # gaps, borders
 gaps inner 20
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 1
+
+# gap sizes
+# https://erikdubois.be/change-size-gaps-i3-via-keyboard-shortcut/
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+ 
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+ 
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+ 
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+ 
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+ 
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+ 
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
 # move workspaces between monitors
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
@@ -181,13 +220,11 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 
-# wallpaper
-exec_always feh --bg-fill ~/Pictures/wallpaper.jpg
-
-# open stuff
-exec $term
-exec $term -e ranger
+# compton
 exec_always compton -f -i 0.85
 
 # win-d rofi
-bindsym $mod+d exec rofi -show run -config ~/.config/rofi/config
+bindsym $mod+d exec rofi -show run
+
+# wallpaper + colors (wal)
+# exec_always --no-startup-id /home/paavo/.local/bin/wal -R
