@@ -227,4 +227,4 @@ exec_always compton -f -i 0.85
 bindsym $mod+d exec rofi -show run
 
 # wallpaper + colors (wal)
-# exec_always --no-startup-id /home/paavo/.local/bin/wal -R
+exec_always --no-startup-id /home/paavo/.local/bin/wal -R
