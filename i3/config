@@ -212,19 +212,31 @@ mode "$mode_gaps_outer" {
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
 bindsym $mod+Ctrl+Shift+Right move workspace to output right
 
-# multimedia controls
-# https://faq.i3wm.org/question/3747/enabling-multimedia-keys/?answer=3759#post-id-3759
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20
-
-# compton
-exec_always compton -f -i 0.85
-
 # win-d rofi
 bindsym $mod+d exec rofi -show run
+bindsym $mod+Shift+d exec xfce4-popup-whiskermenu
+
+# compton
+exec_always --no-startup-id compton -f -i 0.85
+
+# load xresources
+exec_always --no-startup-id xrdb ~/.Xresources
+
+# xfce4 stuff
+exec --no-startup-id xfsettingsd --sm-client-disable &
+exec --no-startup-id xfce4-panel
 
 # wallpaper + colors (wal)
-exec_always --no-startup-id /home/paavo/.local/bin/wal -R
+exec_always --no-startup-id wal -R
+
+# plug screens
+bindsym $mod+p exec --no-startup-id ~/.screenlayout/home-plugged.sh
+bindsym $mod+Shift+p exec --no-startup-id ~/.screenlayout/laptop-only.sh
+
+# keyring/auth stuff
+# https://forum.antergos.com/topic/6690/pamac-manager-authentication-failed-error/9
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
+
+ 
+
+
