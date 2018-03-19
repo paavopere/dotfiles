@@ -154,7 +154,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # gaps, borders
 gaps inner 20
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 5
 
 # gap sizes
 # https://erikdubois.be/change-size-gaps-i3-via-keyboard-shortcut/
@@ -203,8 +203,11 @@ bindsym $mod+Ctrl+Shift+Right move workspace to output right
 bindsym $mod+d exec rofi -show run
 bindsym $mod+Shift+d exec xfce4-popup-whiskermenu
 
+# win-esc lock screen
+bindsym $mod+Escape exec i3lock
+
 # compton
-exec_always --no-startup-id compton -f -i 0.85
+exec_always --no-startup-id compton -f -i 0.95
 
 # load xresources
 exec_always --no-startup-id xrdb ~/.Xresources
@@ -212,6 +215,8 @@ exec_always --no-startup-id xrdb ~/.Xresources
 # xfce4 stuff
 exec --no-startup-id xfsettingsd --sm-client-disable &
 exec --no-startup-id xfce4-panel
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
 
 # wallpaper + colors (wal)
 exec_always --no-startup-id wal -R
