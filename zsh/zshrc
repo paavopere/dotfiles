@@ -36,12 +36,12 @@ ex ()
   fi
 }
 
-# better yaourt colors
-export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
-
-# # added by Anaconda3 installer
-# export PATH="/home/paavo/anaconda3/bin:$PATH"
-
 # vpn
 alias vpnup='nmcli con up paavo-openvpn'
 alias vpndown='nmcli con down paavo-openvpn'
+
+# hp stuff
+function hp-add { echo "$(date +"%Y-%m-%d %H:%M:%S"),$1" >> hp.csv }
+alias hp-look='tail hp.csv'
+
+export PATH="$HOME/.bin:$PATH"

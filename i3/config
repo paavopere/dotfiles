@@ -146,6 +146,7 @@ set $urgent-bg-color     #E53935
 set $indicator-color     #616c82
 
 # window colors
+#
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          $indicator-color
 client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color
@@ -192,7 +193,7 @@ mode "$mode_gaps_outer" {
         bindsym Shift+0     gaps outer all set 0
  
         bindsym Return mode "default"
-        bindsym Escape mode "default"
+
 }
 
 # move workspaces between monitors
@@ -204,7 +205,7 @@ bindsym $mod+d exec rofi -show run
 bindsym $mod+Shift+d exec xfce4-popup-whiskermenu
 
 # win-esc lock screen
-bindsym $mod+Escape exec i3lock
+bindsym $mod+Escape exec ~/.bin/scripts/lock.sh
 
 # compton
 exec_always --no-startup-id compton -f -i 0.95
@@ -229,6 +230,6 @@ bindsym $mod+Shift+p exec --no-startup-id ~/.screenlayout/laptop-only.sh
 # https://forum.antergos.com/topic/6690/pamac-manager-authentication-failed-error/9
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 
- 
-
+# screenshot
+bindsym $mod+Shift+s exec --no-startup-id "xfce4-screenshooter -rc" 
 
