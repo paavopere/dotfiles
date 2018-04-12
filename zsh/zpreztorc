@@ -11,10 +11,8 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'syntax-highlighting' \
   'prompt'
-# idjf
-# isjdf
 zstyle ':prezto:module:editor' key-bindings 'vi'
-zstyle ':prezto:module:prompt' theme 'agnoster'
+zstyle ':prezto:module:prompt' theme 'powerlevel9k'
 zstyle ':prezto:module:syntax-highlighting' highlighters \
   'main' \
   'brackets' \

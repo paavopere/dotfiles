@@ -155,7 +155,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # gaps, borders
 gaps inner 20
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 1
 
 # gap sizes
 # https://erikdubois.be/change-size-gaps-i3-via-keyboard-shortcut/
@@ -193,12 +193,12 @@ mode "$mode_gaps_outer" {
         bindsym Shift+0     gaps outer all set 0
  
         bindsym Return mode "default"
-
+        bindsym Escape mode "default"
 }
 
 # move workspaces between monitors
-bindsym $mod+Ctrl+Shift+Left move workspace to output left
-bindsym $mod+Ctrl+Shift+Right move workspace to output right
+bindsym $mod+Prior move workspace to output left
+bindsym $mod+Next move workspace to output right
 
 # win-d rofi
 bindsym $mod+d exec rofi -show run
@@ -206,21 +206,23 @@ bindsym $mod+Shift+d exec xfce4-popup-whiskermenu
 
 # win-esc lock screen
 bindsym $mod+Escape exec ~/.bin/scripts/lock.sh
+bindsym $mod+Shift+Escape exec ~/.bin/scripts/lock.sh & systemctl suspend
 
 # compton
-exec_always --no-startup-id compton -f -i 0.95
+exec_always --no-startup-id compton -b -f --inactive-dim 0.2
 
 # load xresources
 exec_always --no-startup-id xrdb ~/.Xresources
 
 # xfce4 stuff
 exec --no-startup-id xfsettingsd --sm-client-disable &
+exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xfce4-panel
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 
 # wallpaper + colors (wal)
-exec_always --no-startup-id wal -R
+exec_always --no-startup-id $HOME/anaconda3/bin/wal -R
 
 # plug screens
 bindsym $mod+p exec --no-startup-id ~/.screenlayout/home-plugged.sh

@@ -1,9 +1,8 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable anaconda vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_STATUS_VERBOSE=false
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -45,3 +44,4 @@ function hp-add { echo "$(date +"%Y-%m-%d %H:%M:%S"),$1" >> hp.csv }
 alias hp-look='tail hp.csv'
 
 export PATH="$HOME/.bin:$PATH"
+source anaconda3/etc/profile.d/conda.sh
