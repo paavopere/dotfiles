@@ -12,6 +12,7 @@ set cmdheight=2
 set incsearch 
 set hidden
 set scrolloff=5
+set clipboard=unnamedplus
 " https://stackoverflow.com/questions/1878974/redefine-tab-as-4-spaces
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab 
 
