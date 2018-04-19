@@ -4,51 +4,37 @@
 
 set $mod Mod4
 set $term urxvt
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
 font pango:System San Francisco Display 13
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec $term
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+odiaeresis focus right
-
-# alternatively, you can use the cursor keys:
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+odiaeresis move right
-
-# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
+ 
+bindsym $mod+v split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
@@ -77,7 +63,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws0 "10"
 
-# switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -89,7 +74,6 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws0
 
-# move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -101,15 +85,28 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0
 
-# assign workspaces
-# assign [class="jetbrains-datagrip"] $ws3
-
-# reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# win-pageup, win-pagedown move workspaces between monitors
+bindsym $mod+Prior move workspace to output left
+bindsym $mod+Next move workspace to output right
+
+# win-d rofi
+bindsym $mod+d exec rofi -show run
+bindsym $mod+Shift+d exec xfce4-popup-whiskermenu
+
+# win-esc lock screen
+bindsym $mod+Escape exec ~/.bin/scripts/lock.sh
+bindsym $mod+Shift+Escape exec ~/.bin/scripts/lock.sh & systemctl suspend
+
+# win-shift-s screenshot
+bindsym $mod+Shift+s exec --no-startup-id "xfce4-screenshooter -rc" 
+
+# win-p, win-shift-p plug screens
+bindsym $mod+p exec --no-startup-id ~/.screenlayout/home-plugged.sh
+bindsym $mod+Shift+p exec --no-startup-id ~/.screenlayout/laptop-only.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -119,12 +116,11 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym odiaeresis resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
@@ -143,19 +139,19 @@ set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
-set $indicator-color     #616c82
+set $indicator-color     #9200af
 
 # window colors
 #
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          $indicator-color
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-bg-color
 
 # gaps, borders
 gaps inner 20
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 
 # gap sizes
 # https://erikdubois.be/change-size-gaps-i3-via-keyboard-shortcut/
@@ -170,7 +166,6 @@ mode "$mode_gaps" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
- 
 mode "$mode_gaps_inner" {
         bindsym plus  gaps inner current plus 5
         bindsym minus gaps inner current minus 5
@@ -196,42 +191,20 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-# move workspaces between monitors
-bindsym $mod+Prior move workspace to output left
-bindsym $mod+Next move workspace to output right
-
-# win-d rofi
-bindsym $mod+d exec rofi -show run
-bindsym $mod+Shift+d exec xfce4-popup-whiskermenu
-
-# win-esc lock screen
-bindsym $mod+Escape exec ~/.bin/scripts/lock.sh
-bindsym $mod+Shift+Escape exec ~/.bin/scripts/lock.sh & systemctl suspend
-
-# compton
-exec_always --no-startup-id compton -b -f --inactive-dim 0.2
-
 # load xresources
 exec_always --no-startup-id xrdb ~/.Xresources
-
-# xfce4 stuff
-exec --no-startup-id xfsettingsd --sm-client-disable &
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id xfce4-panel
-exec --no-startup-id nm-applet
-exec --no-startup-id blueman-applet
-
 # wallpaper + colors (wal)
 exec_always --no-startup-id $HOME/anaconda3/bin/wal -R
 
-# plug screens
-bindsym $mod+p exec --no-startup-id ~/.screenlayout/home-plugged.sh
-bindsym $mod+Shift+p exec --no-startup-id ~/.screenlayout/laptop-only.sh
+# some other autostarts
+exec --no-startup-id compton -b -f --inactive-dim 0.2
+exec --no-startup-id redshift-gtk
+exec --no-startup-id xfsettingsd --sm-client-disable 
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id xfce4-panel --disable-wm-check
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
 
 # keyring/auth stuff
 # https://forum.antergos.com/topic/6690/pamac-manager-authentication-failed-error/9
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
-
-# screenshot
-bindsym $mod+Shift+s exec --no-startup-id "xfce4-screenshooter -rc" 
-
