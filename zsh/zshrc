@@ -1,6 +1,6 @@
 POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(anaconda time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable vcs anaconda)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
@@ -8,8 +8,10 @@ POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 POWERLEVEL9K_PYTHON_ICON=""
 POWERLEVEL9K_TIME_FORMAT='%D{%H:%M}'
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=""
 
-ZLE_RPROMPT_INDENT=0
+#ZLE_RPROMPT_INDENT=0
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -53,6 +55,7 @@ alias hp-look="tail $HOME/hp.csv"
 # other aliases
 alias dgg="ssh -i $HOME/.ssh/dataserver data.gh.gg"
 alias ssa="ssh-add $HOME/.ssh/id_rsa"
+alias ca="conda activate"
 
 # random customizations
 export PATH="$HOME/.bin:$PATH"

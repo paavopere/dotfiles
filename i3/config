@@ -18,22 +18,21 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# bindsym $mod+Shift+Left move left
+# bindsym $mod+Shift+Down move down
+# bindsym $mod+Shift+Up move up
+# bindsym $mod+Shift+Right move right
 
- 
 bindsym $mod+v split toggle
 bindsym $mod+f fullscreen toggle
 
@@ -97,6 +96,9 @@ bindsym $mod+Next move workspace to output right
 bindsym $mod+d exec rofi -show run
 bindsym $mod+Shift+d exec xfce4-popup-whiskermenu
 
+# win-c browser (probably chrome)
+bindsym $mod+c exec --no-startup-id "$BROWSER" 
+
 # win-esc lock screen
 bindsym $mod+Escape exec ~/.bin/scripts/lock.sh
 bindsym $mod+Shift+Escape exec ~/.bin/scripts/lock.sh & systemctl suspend
@@ -110,23 +112,16 @@ bindsym $mod+Shift+p exec --no-startup-id ~/.screenlayout/laptop-only.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        # bindsym Left resize shrink width 10 px or 10 ppt
+        # bindsym Down resize grow height 10 px or 10 ppt
+        # bindsym Up resize shrink height 10 px or 10 ppt
+        # bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -192,18 +187,21 @@ mode "$mode_gaps_outer" {
 }
 
 # load xresources
-exec_always --no-startup-id xrdb ~/.Xresources
+exec_always --no-startup-id xrdb $HOME/.Xresources
 # wallpaper + colors (wal)
 exec_always --no-startup-id $HOME/anaconda3/bin/wal -R
 
 # some other autostarts
-exec --no-startup-id compton -b -f --inactive-dim 0.2
+exec_always --no-startup-id compton -b -f --inactive-dim 0.2
 exec --no-startup-id redshift-gtk
-exec --no-startup-id xfsettingsd --sm-client-disable 
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id xfce4-panel --disable-wm-check
-exec --no-startup-id nm-applet
-exec --no-startup-id blueman-applet
+exec_always --no-startup-id xfsettingsd --sm-client-disable 
+exec_always --no-startup-id xfce4-power-manager
+# exec_always --no-startup-id xfce4-panel --disable-wm-check
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id blueman-applet
+
+# polybar
+exec_always --no-startup-id $HOME/dotfiles/scripts/polybar.sh
 
 # keyring/auth stuff
 # https://forum.antergos.com/topic/6690/pamac-manager-authentication-failed-error/9
