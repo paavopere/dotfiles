@@ -3,7 +3,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $term urxvt
+set $term termite
 font pango:System San Francisco Display 13
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -109,6 +109,10 @@ bindsym $mod+Shift+s exec --no-startup-id "xfce4-screenshooter -rc"
 # win-p, win-shift-p plug screens
 bindsym $mod+p exec --no-startup-id ~/.screenlayout/home-plugged.sh
 bindsym $mod+Shift+p exec --no-startup-id ~/.screenlayout/laptop-only.sh
+
+# enable, disable dimming (via restarting compton)
+bindsym $mod+x exec killall compton &&  compton -bf --inactive-dim 0.2
+bindsym $mod+Shift+x exec killall compton && compton -bf
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
