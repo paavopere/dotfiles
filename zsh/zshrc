@@ -9,7 +9,7 @@ POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 POWERLEVEL9K_PYTHON_ICON=""
 POWERLEVEL9K_TIME_FORMAT='%D{%H:%M}'
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=""
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=" "
 
 #ZLE_RPROMPT_INDENT=0
 
@@ -43,6 +43,8 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # vpn
 alias vpnup='nmcli con up paavo-openvpn'
