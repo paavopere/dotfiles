@@ -52,10 +52,11 @@ alias vpndown='nmcli con down paavo-openvpn'
 function hp-add { echo "$(date +"%Y-%m-%d %H:%M:%S"),$1" >> $HOME/hp.csv }
 alias hp-look="tail $HOME/hp.csv"
 
-# other aliases
+# other aliases / functions
 alias dgg="ssh -i $HOME/.ssh/dataserver data.gh.gg"
 alias ssa="ssh-add $HOME/.ssh/id_rsa"
 alias ca="conda activate"
+function char { printf "$(printf '\\U%08x' 0x$1)\n" }  # print character at code point e.g. `char f011`
 
 # random customizations
 export PATH="$HOME/.bin:$PATH"
