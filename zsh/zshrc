@@ -58,6 +58,7 @@ alias hp-look="tail $HOME/hp.csv"
 alias dgg="ssh -i $HOME/.ssh/dataserver data.gh.gg"
 alias ssa="ssh-add $HOME/.ssh/id_rsa"
 alias ca="conda activate"
+alias jl="jupyter lab || (conda activate && jupyter lab)"
 function char { printf "$(printf '\\U%08x' 0x$1)\n" }  # print character at code point e.g. `char f011`
 
 # random customizations
