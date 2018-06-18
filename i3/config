@@ -4,7 +4,10 @@
 
 set $mod Mod4
 set $term termite
-font pango:System San Francisco Display 13
+
+# # doesn't make a difference I guess
+# font pango:System San Francisco Display 13
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -18,20 +21,12 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-# bindsym $mod+Left focus left
-# bindsym $mod+Down focus down
-# bindsym $mod+Up focus up
-# bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-# bindsym $mod+Shift+Left move left
-# bindsym $mod+Shift+Down move down
-# bindsym $mod+Shift+Up move up
-# bindsym $mod+Shift+Right move right
 
 bindsym $mod+v split toggle
 bindsym $mod+f fullscreen toggle
@@ -116,15 +111,10 @@ bindsym $mod+Shift+x exec killall compton && compton -bf
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-
-        # bindsym Left resize shrink width 10 px or 10 ppt
-        # bindsym Down resize grow height 10 px or 10 ppt
-        # bindsym Up resize shrink height 10 px or 10 ppt
-        # bindsym Right resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -133,9 +123,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 set $bg-color 	         #006e4b
-set $bar-color           #2f343f
 set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
+# set $text-color          #f3f4f5
+set $text-color          #ffff00
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 set $indicator-color     #9200af
@@ -192,6 +182,7 @@ mode "$mode_gaps_outer" {
 
 # load xresources
 exec_always --no-startup-id xrdb $HOME/.Xresources
+
 # wallpaper + colors (wal)
 exec_always --no-startup-id $HOME/anaconda3/bin/wal -R
 
@@ -200,7 +191,6 @@ exec_always --no-startup-id compton -b -f --inactive-dim 0.2
 exec --no-startup-id redshift-gtk
 exec_always --no-startup-id xfsettingsd --sm-client-disable 
 exec_always --no-startup-id xfce4-power-manager
-# exec_always --no-startup-id xfce4-panel --disable-wm-check
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
 
