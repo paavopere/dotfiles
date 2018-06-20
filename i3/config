@@ -183,8 +183,9 @@ mode "$mode_gaps_outer" {
 # load xresources
 exec_always --no-startup-id xrdb $HOME/.Xresources
 
-# wallpaper + colors (wal)
-exec_always --no-startup-id $HOME/anaconda3/bin/wal -R
+# wallpaper
+# exec_always --no-startup-id $HOME/anaconda3/bin/wal -R
+exec_always --no-startup-id nitrogen --restore
 
 # some other autostarts
 exec_always --no-startup-id compton -b -f --inactive-dim 0.2
