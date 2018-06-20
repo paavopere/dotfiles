@@ -60,7 +60,7 @@ alias ssa="ssh-add $HOME/.ssh/id_rsa"
 alias ca="conda activate"
 alias jl="jupyter lab || (conda activate && jupyter lab)"
 function char { printf "$(printf '\\U%08x' 0x$1)\n" }  # print character at code point e.g. `char f011`
-alias mysqldd="mysql -h $(jq -r .host ~/.mysql/reportingdb.json) -p$(jq -r .password ~/.mysql/reportingdb.json)"
+alias mysqldd="/home/paavo/anaconda3/bin/mysql -h $(jq -r .host ~/.mysql/reportingdb.json) -p$(jq -r .password ~/.mysql/reportingdb.json)"
 
 # random customizations
 export PATH="$HOME/.bin:$PATH"
