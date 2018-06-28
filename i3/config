@@ -89,7 +89,6 @@ bindsym $mod+Next move workspace to output right
 
 # win-d rofi
 bindsym $mod+d exec rofi -show run
-bindsym $mod+Shift+d exec xfce4-popup-whiskermenu
 
 # win-c browser (probably chrome)
 bindsym $mod+c exec --no-startup-id "$BROWSER" 
@@ -190,7 +189,7 @@ exec_always --no-startup-id nitrogen --restore
 # some other autostarts
 exec_always --no-startup-id compton -b -f --inactive-dim 0.2
 exec --no-startup-id redshift-gtk
-exec_always --no-startup-id xfsettingsd --sm-client-disable 
+# exec_always --no-startup-id xfsettingsd --sm-client-disable 
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
