@@ -1,19 +1,8 @@
-Xcursor.size: 16W
-URxvt.urgentOnBell: true
-URxvt.scrollBar: false
-URxvt.font: xft:Hack NF:size=14
-URxvt.url-launcher: /usr/bin/google-chrome
-URxvt.matcher.button: 1
-URxvt.perl-ext-common: default,matcher,vtw:wheel,resize-font,selection-to-clipboard
-URxvt.cursorBlink: 1
-URxvt.cursorUnderline: 1
-URxvt.termName: xterm-256color
-
-rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
-rofi.lines: 5
-rofi.width: 100 
-rofi.modi: window,run
-rofi.terminal: urxvt 
+rofi.theme: Arc-Dark
+rofi.lines: 10
+rofi.width: 50
+rofi.modi: window,run,drun,clipboard:greenclip print
+rofi.terminal: termite 
 rofi.case-sensitive: false
 rofi.eh: 2
 rofi.padding: 800 

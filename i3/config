@@ -29,21 +29,19 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 bindsym $mod+v split toggle
+bindsym $mod+Shift+v focus parent
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+Control+Tab layout stacking
+bindsym $mod+Shift+Tab layout tabbed
+bindsym $mod+Tab layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
 
 # workspace variables
 set $ws1 "1"
@@ -83,26 +81,31 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# win-pageup, win-pagedown move workspaces between monitors
+# move workspaces between monitors
 bindsym $mod+Prior move workspace to output left
 bindsym $mod+Next move workspace to output right
 
-# win-d rofi
-bindsym $mod+d exec rofi -show run
+# rofi & greenclip
+bindsym $mod+d exec "rofi -show drun"
+bindsym $mod+Shift+d exec "rofi -show run"
+bindsym $mod+Control+d exec "rofi -show window"
+bindsym $mod+Control+c exec "rofi -show clipboard"
 
-# win-c browser (probably chrome)
+# browser (probably chrome)
 bindsym $mod+c exec --no-startup-id "$BROWSER" 
 
-# win-esc lock screen
+# lock screen
 bindsym $mod+Escape exec ~/.bin/scripts/lock.sh
 bindsym $mod+Shift+Escape exec ~/.bin/scripts/lock.sh & systemctl suspend
 
-# win-shift-s screenshot
-bindsym $mod+Shift+s exec --no-startup-id "xfce4-screenshooter -rc" 
+# screenshot
+bindsym $mod+Shift+s exec --no-startup-id "xfce4-screenshooter -rc"
+bindsym $mod+Control+s exec --no-startup-id "xfce4-screenshooter"
 
-# win-p, win-shift-p plug screens
-bindsym $mod+p exec --no-startup-id ~/.screenlayout/home-plugged.sh
-bindsym $mod+Shift+p exec --no-startup-id ~/.screenlayout/laptop-only.sh
+# plug screens
+bindsym $mod+p exec --no-startup-id "~/.screenlayout/home-plugged.sh"
+bindsym $mod+Shift+p exec --no-startup-id "~/.screenlayout/laptop-only.sh"
+bindsym $mod+Control+p exec --no-startup-id "~/.screenlayout/office-plugged-right.sh"
 
 # enable, disable dimming (via restarting compton)
 bindsym $mod+x exec killall compton &&  compton -bf --inactive-dim 0.2
@@ -121,13 +124,13 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color 	         #006e4b
-set $inactive-bg-color   #2f343f
+set $bg-color 	         #57c7ff
+set $inactive-bg-color   #1e1f29
 # set $text-color          #f3f4f5
 set $text-color          #ffff00
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
-set $indicator-color     #9200af
+set $indicator-color     #5af78e
 
 # window colors
 #
@@ -139,7 +142,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # gaps, borders
 gaps inner 20
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 2 
 
 # gap sizes
 # https://erikdubois.be/change-size-gaps-i3-via-keyboard-shortcut/
@@ -189,10 +192,10 @@ exec_always --no-startup-id nitrogen --restore
 # some other autostarts
 exec_always --no-startup-id compton -b -f --inactive-dim 0.2
 exec --no-startup-id redshift-gtk
-# exec_always --no-startup-id xfsettingsd --sm-client-disable 
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
+exec greenclip daemon
 
 # polybar
 exec_always --no-startup-id $HOME/dotfiles/scripts/polybar.sh
