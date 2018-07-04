@@ -195,7 +195,7 @@ exec --no-startup-id redshift-gtk
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
-exec greenclip daemon
+exec --no-startup-id greenclip daemon
 
 # polybar
 exec_always --no-startup-id $HOME/dotfiles/scripts/polybar.sh
