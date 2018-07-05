@@ -108,7 +108,7 @@ bindsym $mod+Shift+p exec --no-startup-id "~/.screenlayout/laptop-only.sh"
 bindsym $mod+Control+p exec --no-startup-id "~/.screenlayout/office-plugged-right.sh"
 
 # enable, disable dimming (via restarting compton)
-bindsym $mod+x exec killall compton &&  compton -bf --inactive-dim 0.2
+bindsym $mod+x exec killall compton && compton -bf --inactive-dim 0.2
 bindsym $mod+Shift+x exec killall compton && compton -bf
 
 # resize window (you can also use the mouse for that)
@@ -200,6 +200,6 @@ exec --no-startup-id greenclip daemon
 # polybar
 exec_always --no-startup-id $HOME/dotfiles/scripts/polybar.sh
 
-# keyring/auth stuff
-# https://forum.antergos.com/topic/6690/pamac-manager-authentication-failed-error/9
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
+# # keyring/auth stuff
+# # https://forum.antergos.com/topic/6690/pamac-manager-authentication-failed-error/9
+# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
