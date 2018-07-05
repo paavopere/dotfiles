@@ -222,9 +222,9 @@ format-discharging-underline = ${self.format-charging-underline}
 format-full-prefix = "0  "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
-ramp-capacity-0 = "0 "
-ramp-capacity-1 = "0 "
-ramp-capacity-2 = "0 "
+ramp-capacity-0 = "0  "
+ramp-capacity-1 = "0  "
+ramp-capacity-2 = "0  "
 ramp-capacity-foreground = ${colors.foreground-alt}
 
 [module/battery1]
