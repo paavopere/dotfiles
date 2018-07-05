@@ -24,7 +24,8 @@ export SSH_AUTH_SOCK
 # start agent
 eval $(ssh-agent)
 
-# bind keys
+# keyboard stuff
+setxkbmap -layout "fi,fi,us" -variant "nodeadkeys,," -option "compose:caps" -option "grp:alt_shift_toggle"
 xbindkeys
 
 # start wm
