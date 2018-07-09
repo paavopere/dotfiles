@@ -140,6 +140,10 @@ client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-bg-color
 
+# force some windows to start as floating
+for_window [class="Blueman-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+
 # gaps, borders
 gaps inner 20
 for_window [class="^.*"] border pixel 2 
