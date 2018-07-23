@@ -187,7 +187,7 @@ mode "$mode_gaps_outer" {
 }
 
 # load xresources
-exec_always --no-startup-id xrdb $HOME/.Xresources
+# exec_always --no-startup-id xrdb $HOME/.Xresources
 
 # wallpaper
 # exec_always --no-startup-id $HOME/anaconda3/bin/wal -R
@@ -197,13 +197,9 @@ exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/dotfiles/scripts/polybar.sh
 
 # some other autostarts
+exec --no-startup-id dex -a -s ~/.config/autostart -e i3
 exec_always --no-startup-id compton -b -f --inactive-dim 0.2
-exec --no-startup-id redshift-gtk
-exec_always --no-startup-id xfce4-power-manager
-exec_always --no-startup-id nm-applet
-exec_always --no-startup-id blueman-applet
 exec --no-startup-id greenclip daemon
-# exec --no-startup-id termite -e "zsh -c 'sudo -p Password\ for\ pacman\ -Syu: pacman -Syu && zsh'"
 
 # # keyring/auth stuff
 # # https://forum.antergos.com/topic/6690/pamac-manager-authentication-failed-error/9
