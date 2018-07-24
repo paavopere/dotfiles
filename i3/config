@@ -198,9 +198,7 @@ exec_always --no-startup-id $HOME/dotfiles/scripts/polybar.sh
 
 # some other autostarts
 exec --no-startup-id dex -a -s ~/.config/autostart -e i3
-exec_always --no-startup-id compton -b -f --inactive-dim 0.2
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id compton -b -f --inactive-dim 0.2
 exec --no-startup-id greenclip daemon
 
-# # keyring/auth stuff
-# # https://forum.antergos.com/topic/6690/pamac-manager-authentication-failed-error/9
-# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
