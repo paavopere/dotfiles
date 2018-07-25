@@ -143,6 +143,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # force some windows to start as floating
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
+for_window [class="Seahorse"] floating enable
 
 # gaps, borders
 gaps inner 20
