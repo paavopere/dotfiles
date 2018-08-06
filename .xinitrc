@@ -5,7 +5,7 @@
 # Executed by startx (run your window manager from here)
 
 export XINITFOO=bar
-export BROWSER="/usr/bin/google-chrome-stable"
+export BROWSER="/usr/bin/qutebrowser"
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
