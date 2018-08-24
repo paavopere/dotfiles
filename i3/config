@@ -101,7 +101,7 @@ bindsym $mod+Escape exec ~/.bin/scripts/lock.sh
 bindsym $mod+Shift+Escape exec ~/.bin/scripts/lock.sh & systemctl suspend
 
 # screenshot
-bindsym $mod+Shift+s exec --no-startup-id "xfce4-screenshooter -rc"
+bindsym $mod+Shift+s exec --no-startup-id "xfce4-screenshooter -r"
 bindsym $mod+Control+s exec --no-startup-id "xfce4-screenshooter"
 
 # plug screens
