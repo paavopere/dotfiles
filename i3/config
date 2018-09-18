@@ -97,8 +97,8 @@ bindsym $mod+c exec --no-startup-id "$BROWSER"
 bindsym $mod+Shift+c exec --no-startup-id google-chrome-stable
 
 # lock screen
-bindsym $mod+Escape exec ~/.bin/scripts/lock.sh
-bindsym $mod+Shift+Escape exec ~/.bin/scripts/lock.sh & systemctl suspend
+bindsym $mod+Escape exec "~/.bin/scripts/lock.sh"
+bindsym $mod+Shift+Escape exec "~/.bin/scripts/lock.sh; systemctl suspend"
 
 # screenshot
 bindsym $mod+Shift+s exec --no-startup-id "xfce4-screenshooter -r"
