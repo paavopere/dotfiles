@@ -101,8 +101,7 @@ bindsym $mod+Escape exec "~/.bin/scripts/lock.sh"
 bindsym $mod+Shift+Escape exec "~/.bin/scripts/lock.sh; systemctl suspend"
 
 # screenshot
-bindsym $mod+Shift+s exec --no-startup-id "xfce4-screenshooter -r"
-bindsym $mod+Control+s exec --no-startup-id "xfce4-screenshooter"
+bindsym $mod+Shift+s exec --no-startup-id "flameshot gui"
 
 # plug screens
 bindsym $mod+p exec --no-startup-id "~/.screenlayout/home-plugged.sh"

@@ -24,3 +24,6 @@
   st    = status
   f     = fetch
   pl    = pull
+
+[push]
+  default = current
