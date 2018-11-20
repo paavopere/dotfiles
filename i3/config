@@ -94,7 +94,7 @@ bindsym $mod+Control+c exec "rofi -show clipboard"
 
 # browser (qutebrowser or shift for chrome)
 bindsym $mod+c exec --no-startup-id "$BROWSER" 
-bindsym $mod+Shift+c exec --no-startup-id google-chrome-stable
+bindsym $mod+Shift+c exec --no-startup-id chromium 
 
 # lock screen
 bindsym $mod+Escape exec "~/.bin/scripts/lock.sh"
