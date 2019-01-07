@@ -25,12 +25,12 @@ dbus-update-activation-environment --systemd DISPLAY
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)
 export SSH_AUTH_SOCK
 
-# start agent
+# # start agent
 # eval $(ssh-agent)
 
-# keyboard stuff
-setxkbmap -layout "fi,fi,us" -variant "nodeadkeys,," -option "compose:caps" -option "grp:alt_shift_toggle"
-xbindkeys
+# # keyboard stuff
+# setxkbmap -layout "fi,fi,us" -variant "nodeadkeys,," -option "compose:caps" -option "grp:alt_shift_toggle"
+# xbindkeys
 
 # start wm
 exec i3
