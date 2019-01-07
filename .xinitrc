@@ -32,6 +32,9 @@ export SSH_AUTH_SOCK
 # setxkbmap -layout "fi,fi,us" -variant "nodeadkeys,," -option "compose:caps" -option "grp:alt_shift_toggle"
 # xbindkeys
 
+
 # start wm
-exec i3
+exec tdm --xstart
+# used to be:
+# exec i3
 
