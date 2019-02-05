@@ -19,11 +19,12 @@ alias vpndown='nmcli con down paavo-openvpn'
 alias swag='echo -e "connect 98:9E:63:0E:04:4D" | bluetoothctl' 
 alias unswag='echo -e "disconnect 98:9E:63:0E:04:4D" | bluetoothctl' 
 alias kilburn='echo -e "connect 04:FE:A1:CF:2C:04" | bluetoothctl'
-alias unkilburn='echo -e "disconnect 04:FE:A1:CF:2C:04 | bluetoothctl'
+alias unkilburn='echo -e "disconnect 04:FE:A1:CF:2C:04" | bluetoothctl'
 
 # hp stuff
 function hp-add { echo "$(date +"%Y-%m-%d %H:%M:%S"),$1" >> $HOME/hp.csv }
 alias hp-look="tail $HOME/hp.csv"
+alias selp="/home/paavo/anaconda3/envs/selp/bin/python -m selp"
 
 # other aliases / functions
 alias dgg="ssh -i $HOME/.ssh/dataserver data.gh.gg"
@@ -31,6 +32,5 @@ alias ssa="ssh-add $HOME/.ssh/id_rsa"
 alias ca="conda activate"
 alias jl="jupyter lab || (conda activate && jupyter lab)"
 function char { printf "$(printf '\\U%08x' 0x$1)\n" }  # print character at code point e.g. `char f011`
-alias mysqldd="/home/paavo/anaconda3/bin/mysql -h $(jq -r .host ~/.mysql/reportingdb.json) -p$(jq -r .password ~/.mysql/reportingdb.json)"
+alias mysqldd="mysql --defaults-file=~/.mysql/reportingdb.ini"
 alias uuid="python -c 'from uuid import uuid4; print(uuid4())'"
-alias ls="lsd"
