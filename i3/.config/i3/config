@@ -54,6 +54,10 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
+# move workspaces between monitors
+bindsym $mod+Prior move workspace to output left
+bindsym $mod+Next move workspace to output right
+
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
@@ -114,7 +118,7 @@ bindsym $mod+Shift+g gaps inner current minus 2
 exec_always --no-startup-id nitrogen --restore
 
 # polybar
-exec_always --no-startup-id $HOME/dotfiles/scripts/polybar.sh
+exec_always --no-startup-id $HOME/dotfiles/scripts/polybar-plasma-i3.sh
 
 ## Plasma Integration
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
