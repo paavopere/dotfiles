@@ -92,9 +92,9 @@ bindsym $mod+Shift+d exec "rofi -show run"
 bindsym $mod+Control+d exec "rofi -show window"
 bindsym $mod+Control+c exec "rofi -show clipboard"
 
-# browser (qutebrowser or shift for chrome)
+# browser (qutebrowser or shift for firefox)
 bindsym $mod+c exec --no-startup-id "$BROWSER" 
-bindsym $mod+Shift+c exec --no-startup-id chromium 
+bindsym $mod+Shift+c exec --no-startup-id firefox
 
 # lock screen
 bindsym $mod+Escape exec "~/.bin/scripts/lock.sh"
@@ -109,8 +109,8 @@ bindsym $mod+Shift+p exec --no-startup-id "~/.screenlayout/laptop-only.sh"
 bindsym $mod+Control+p exec --no-startup-id "~/.screenlayout/office-plugged-right.sh"
 
 # enable, disable dimming (via restarting compton)
-bindsym $mod+x exec killall compton && compton -bf --inactive-dim 0.2
-bindsym $mod+Shift+x exec killall compton && compton -bf
+bindsym $mod+x exec killall compton && compton --config ~/.config/compton-pure-i3.conf &
+bindsym $mod+Shift+x exec killall compton && compton --config ~/.config/compton-pure-i3.conf --inactive-dim=0 &
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -202,6 +202,23 @@ exec_always --no-startup-id $HOME/dotfiles/scripts/polybar.sh
 # some other autostarts
 exec --no-startup-id dex -a -s ~/.config/autostart -e i3
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id compton -b -f --inactive-dim 0.2
+exec --no-startup-id compton --config ~/.config/compton-pure-i3.conf &
 exec --no-startup-id dunst
 exec --no-startup-id greenclip daemon
+
+
+## Plasma Integration
+# Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
+exec --no-startup-id wmctrl -c Plasma
+for_window [title="Desktop — Plasma"] kill, floating enable, border none
+
+## Avoid tiling popups, dropdown windows from plasma
+# for the first time, manually resize them, i3 will remember the setting for floating windows
+for_window [class="plasmashell"] floating enable
+for_window [class="Plasma"] floating enable, border none
+for_window [title="plasma-desktop"] floating enable, border none
+for_window [title="win7"] floating enable, border none
+for_window [class="krunner"] floating enable, border none
+for_window [class="Kmix"] floating enable, border none
+for_window [class="Klipper"] floating enable, border none
+for_window [class="Plasmoidviewer"] floating enable, border none
