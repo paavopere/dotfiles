@@ -30,7 +30,7 @@ alias selp="/home/paavo/anaconda3/envs/selp/bin/python -m selp"
 alias dgg="ssh -i $HOME/.ssh/dataserver data.gh.gg"
 alias ssa="ssh-add $HOME/.ssh/id_rsa"
 alias ca="conda activate"
-alias jl="jupyter lab || (conda activate && jupyter lab)"
+alias jl="conda activate && jupyter lab --no-browser"
 function char { printf "$(printf '\\U%08x' 0x$1)\n" }  # print character at code point e.g. `char f011`
 alias mysqldd="mysql --defaults-file=~/.mysql/reportingdb.ini"
 alias uuid="python -c 'from uuid import uuid4; print(uuid4())'"
