@@ -68,6 +68,28 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+
+# enable, disable dimming (via restarting compton)
+bindsym $mod+x exec killall compton && compton --config ~/.config/compton-plasma-i3.conf &
+bindsym $mod+Shift+x exec killall compton && compton --config ~/.config/compton-plasma-i3.conf --inactive-dim=0 &
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
+        bindsym Shift+h resize shrink width 1 px or 1 ppt
+        bindsym Shift+j resize grow height 1 px or 1 ppt
+        bindsym Shift+k resize shrink height 1 px or 1 ppt
+        bindsym Shift+l resize grow width 1 px or 1 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
