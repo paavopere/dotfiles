@@ -1,2 +1,2 @@
 export KDEWM=/usr/bin/i3
-/usr/bin/startkde
+/usr/bin/startplasma-x11

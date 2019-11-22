@@ -11,6 +11,10 @@ export VISUAL='vim'
 export PAGER='less'
 export LESS='-F -g -i -M -R -S -w -X -z-4'
 
+if [ -f $HOME/.zshenv_envvars ]; then
+    source $HOME/.zshenv_envvars
+fi
+
 # vpn
 alias vpnup='nmcli con up paavo-openvpn'
 alias vpndown='nmcli con down paavo-openvpn'
@@ -27,7 +31,7 @@ alias hp-look="tail $HOME/hp.csv"
 alias selp="/home/paavo/anaconda3/envs/selp/bin/python -m selp"
 
 # other aliases / functions
-alias dgg="ssh -i $HOME/.ssh/dataserver data.gh.gg"
+alias dgg="ssh -i $HOME/.ssh/id_rsa data.gh.gg"
 alias ssa="ssh-add $HOME/.ssh/id_rsa"
 alias ca="conda activate"
 alias jl="conda activate && jupyter lab --no-browser"
