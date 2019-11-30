@@ -1,0 +1,8 @@
+[Unit]
+Description=X compositor
+
+[Service]
+ExecStart=/usr/bin/compton
+
+[Install]
+WantedBy=multi-user.target

@@ -70,8 +70,8 @@ bindsym $mod+a focus parent
 
 
 # enable, disable dimming (via restarting compton)
-bindsym $mod+x exec killall compton && compton --config ~/.config/compton-plasma-i3.conf &
-bindsym $mod+Shift+x exec killall compton && compton --config ~/.config/compton-plasma-i3.conf --inactive-dim=0 &
+# bindsym $mod+x exec killall compton && compton --config ~/.config/compton-plasma-i3.conf &
+# bindsym $mod+Shift+x exec killall compton && compton --config ~/.config/compton-plasma-i3.conf --inactive-dim=0 &
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -140,7 +140,6 @@ exec_always --no-startup-id $HOME/dotfiles/scripts/polybar-plasma-i3.sh
 exec --no-startup-id wmctrl -c Plasma
 for_window [title="Desktop — Plasma"] kill, floating enable, border none
 for_window [class="ksplashqml"] kill, floating enable, border none
-for_window [title="ksplashqml"] kill, floating enable, border none
 
 ## Avoid tiling popups, dropdown windows from plasma
 # for the first time, manually resize them, i3 will remember the setting for floating windows
@@ -153,3 +152,6 @@ for_window [class="krunner"] floating enable, border none
 for_window [class="Kmix"] floating enable, border none
 for_window [class="Klipper"] floating enable, border none
 for_window [class="Plasmoidviewer"] floating enable, border none
+
+no_focus [class="plasmashell"]
+
