@@ -16,7 +16,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# font pango:System San Francisco Display 13
+font pango:monospace 13
 floating_modifier $mod
 
 # gaps, borders
@@ -130,6 +130,7 @@ bindsym $mod+g gaps inner current plus 2
 bindsym $mod+Shift+g gaps inner current minus 2
 
 # some cool autostarts
+# exec 'setxkbmap -layout "fi,fi,us" -variant "nodeadkeys,," -option "compose:caps" -option "grp:alt_shift_toggle"'
 exec_always --no-startup-id nitrogen --restore
 
 # polybar

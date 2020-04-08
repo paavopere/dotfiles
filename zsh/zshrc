@@ -48,5 +48,7 @@ ex ()
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# make conda available
-source "$HOME/anaconda3/etc/profile.d/conda.sh"
+# # make conda available
+# source "$HOME/anaconda3/etc/profile.d/conda.sh"
+source "$HOME/miniconda3/etc/profile.d/conda.sh"
+
