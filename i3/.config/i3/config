@@ -4,6 +4,7 @@
 
 set $mod Mod4
 set $term termite
+set $term2 alacritty
 
 set $ws1 "1"
 set $ws2 "2"
@@ -21,12 +22,17 @@ floating_modifier $mod
 
 # gaps, borders
 gaps inner 20
+smart_gaps on
 for_window [class="^.*"] border pixel 2 
+smart_borders on
 
 # start a terminal
 bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $term -r "floater"
-for_window [window_role="floater"] floating enable
+bindsym $mod+Control+Return exec $term2
+bindsym $mod+Shift+Return exec "termite -r 'float'"
+bindsym $mod+Control+Shift+Return exec "alacritty --class 'float'"
+for_window [window_role="float"] floating enable
+for_window [instance="float"] floating enable
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -117,11 +123,12 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Wanna exit i3? And end your X session, too?' -B 'Yep' 'i3-msg exit'"
 
 # rofi & greenclip
 bindsym $mod+d exec "rofi -show drun"
 bindsym $mod+Shift+d exec "rofi -show run"
+bindsym $mod+Control+Shift+d exec "rofi -show emoji"
 bindsym $mod+Control+d exec "rofi -show window"
 bindsym $mod+Control+c exec "rofi -show clipboard"
 
@@ -136,6 +143,12 @@ exec_always --no-startup-id nitrogen --restore
 # polybar
 exec_always --no-startup-id $HOME/dotfiles/scripts/polybar-plasma-i3.sh
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+z move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+z scratchpad show
+
 ## Plasma Integration
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
 exec --no-startup-id wmctrl -c Plasma
@@ -145,7 +158,7 @@ for_window [class="ksplashqml"] kill, floating enable, border none
 ## Avoid tiling popups, dropdown windows from plasma
 # for the first time, manually resize them, i3 will remember the setting for floating windows
 for_window [class="plasmashell"] floating enable
-# for_window [class="plasmashell"] move absolute position 2300 px 40 px 
+# for_window [class="plasmashell"] move absolute position 3400 px 40 px 
 for_window [class="Plasma"] floating enable, border none
 for_window [title="plasma-desktop"] floating enable, border none
 for_window [title="win7"] floating enable, border none

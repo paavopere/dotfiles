@@ -71,8 +71,8 @@ padding-left = 0
 padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
-font-0 = monospace:size=14
-font-1 = Hack Nerd Font Mono:size=15
+font-0 = Lato:size=14
+font-1 = sans-serif:size=15
 font-2 = "Noto Color Emoji:style=Regular:scale=10"
 #font-1 = Noto Color Emoji:size=14
 #font-1 = sans-serif:size=14
@@ -88,7 +88,7 @@ format-underline = #9dce0f
 
 [module/xwindow2]
 type = internal/xwindow
-label = %title:0:60:…%
+label = "%title:0:60:…%"
 format-background = ${colors.background-alt}
 format-foreground = ${colors.foreground}
 format-padding = 1
@@ -96,7 +96,7 @@ format-padding = 1
 [module/spotify]
 type = custom/script
 interval = 1
-format-prefix = " "
+format-prefix = "🎶 "
 format-foreground = #888 
 format = <label>
 exec = python ~/.bin/scripts/spotify_status.py -f '{artist}: {song}'
@@ -338,7 +338,7 @@ menu-2-1-exec = menu-open-0
 
 [module/pomo]
 type = custom/script
-# format-prefix= "🕰️"
+format-prefix= "🍎 "
 # format-prefix-foreground = ${colors.foreground-alt}
 interval = 1
 exec = pomo status
