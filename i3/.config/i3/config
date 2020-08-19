@@ -45,6 +45,7 @@ bindsym $mod+l focus right
 
 bindsym $mod+v split toggle
 bindsym $mod+Shift+v focus parent
+bindsym $mod+Control+v layout toggle stacking tabbed split
 bindsym $mod+f fullscreen toggle
 
 # move focused window
@@ -56,11 +57,6 @@ bindsym $mod+Shift+l move right
 # move workspaces between monitors
 bindsym $mod+Prior move workspace to output left
 bindsym $mod+Next move workspace to output right
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
