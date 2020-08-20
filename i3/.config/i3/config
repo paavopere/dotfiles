@@ -27,10 +27,10 @@ for_window [class="^.*"] border pixel 2
 smart_borders on
 
 # start a terminal
-bindsym $mod+Return exec $term
-bindsym $mod+Control+Return exec $term2
-bindsym $mod+Shift+Return exec "termite -r 'float'"
-bindsym $mod+Control+Shift+Return exec "alacritty --class 'float'"
+bindsym $mod+Return exec --no-startup-id $term
+bindsym $mod+Control+Return exec --no-startup-id $term2
+bindsym $mod+Shift+Return exec --no-startup-id "termite -r 'float'"
+bindsym $mod+Control+Shift+Return exec --no-startup-id "alacritty --class 'float'"
 for_window [window_role="float"] floating enable
 for_window [instance="float"] floating enable
 
