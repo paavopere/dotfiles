@@ -139,6 +139,8 @@ exec_always --no-startup-id nitrogen --restore
 # polybar
 exec_always --no-startup-id $HOME/dotfiles/scripts/polybar-plasma-i3.sh
 
+# exec_always --no-startup-id dunst
+
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+z move scratchpad
 
@@ -165,3 +167,5 @@ for_window [class="Plasmoidviewer"] floating enable, border none
 
 no_focus [class="plasmashell"]
 
+for_window [class="jetbrains-datagrip" title="win0"] floating enable, border none
+for_window [class="jetbrains-pycharm" title="win0"] floating enable, border none

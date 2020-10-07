@@ -37,4 +37,4 @@ alias jl="conda activate && jupyter lab --no-browser"
 function char { printf "$(printf '\\U%08x' 0x$1)\n" }  # print character at code point e.g. `char f011`
 alias mysqldd="mysql --defaults-file=~/.mysql/reportingdb.ini"
 alias uuid="python -c 'from uuid import uuid4; print(uuid4())'"
-alias compton-rl="killall compton; compton --inactive-opacity 1 --inactive-dim 0.4 -o 0 &"
+alias compton-rl="killall compton; compton --config ~/.config/compton-rl.conf -b"

@@ -77,7 +77,7 @@ font-2 = "Noto Color Emoji:style=Regular:scale=10"
 #font-1 = Noto Color Emoji:size=14
 #font-1 = sans-serif:size=14
 modules-left = i3-2 xwindow2
-modules-right = "spotify pomo"
+modules-right = "spotify pomo date"
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
