@@ -10,7 +10,7 @@
 
 [core]
   editor = vim
-  excludesfile = ~/.gitignore_global
+	excludesfile = /home/paavo/.gitignore_global
   trustctime = false
   autocrlf = input
 
