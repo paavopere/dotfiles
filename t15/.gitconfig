@@ -1,0 +1,18 @@
+[user]
+	email = paavo@pere.fi
+	name = Paavo Pere
+
+[github]
+	user = paavopere
+
+[gitlab]
+	user = ppere
+
+[core]
+	editor = vim
+	excludesfile = /home/paavo/.gitignore_global
+	autocrlf = input
+
+[alias]
+	amend = commit --amend --reuse-message=HEAD
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
