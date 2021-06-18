@@ -7,16 +7,10 @@
 </defs>
 <g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel" >
 
-<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(2.27273,0,0,2.27273,0,0)"
+<g fill="none" stroke="#707d8a" stroke-opacity="1" stroke-width="1.01" stroke-linecap="round" stroke-linejoin="round" transform="matrix(2.5,0,0,2.5,2.5,2.5)"
 font-family="Lato" font-size="12" font-weight="400" font-style="normal" 
-opacity="0.001" >
-<rect x="0" y="0" width="22" height="22"/>
-</g>
-
-<g fill="#dfdfdf" fill-opacity="1" stroke="none" transform="matrix(2.27273,0,0,2.27273,-156.818,0)"
-font-family="Lato" font-size="12" font-weight="400" font-style="normal" 
-opacity="0.3" >
-<path vector-effect="none" fill-rule="evenodd" d="M76,7 L76,9 L76,15 L84,15 L84,9 L84,7 L76,7 M78,9 L82,9 L82,12 L82,13 L78,13 L78,12 L78,9"/>
+>
+<path vector-effect="none" fill-rule="evenodd" d="M4,9 L9,4 L14,9 L9,14 L4,9"/>
 </g>
 
 <g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
