@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo cp -vi plasma-i3-a.desktop /usr/share/xsessions/
+sudo cp -vi plasma-i3-b.desktop /usr/share/xsessions/
+sudo cp -vi plasma-i3-b.sh /usr/local/bin/
+sudo chmod u+x /usr/local/bin/plasma-i3-b.sh
+
+cp -vi i3-config ~/.config/i3/config
+cp -vi .gitconfig ~/
+cp -vi .gitignore_global ~/
