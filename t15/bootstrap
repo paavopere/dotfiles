@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo cp plasma-i3.desktop /usr/share/xsessions
+sudo cp plasma-i3.sh /usr/local/bin
+sudo chmod u+x /usr/local/bin/plasma-i3.sh
