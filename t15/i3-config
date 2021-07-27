@@ -4,6 +4,8 @@ set $meta Mod4
 set $alt Mod1 
 set $shift Shift
 set $ctrl Control
+set $page_up Prior
+set $page_down Next
 
 set $term alacritty  
 set $term_float "alacritty --class 'float'"
@@ -31,8 +33,8 @@ set $ws17 "17"
 set $ws18 "18"
 set $ws19 "19"
 set $ws20 "20"
-set $ws20 "21"
-set $ws20 "22"
+set $ws21 "21"
+set $ws22 "22"
 
 gaps inner 20
 for_window [class="^.*"] border pixel 2 
@@ -108,8 +110,8 @@ bindsym $meta+$shift+k move up
 bindsym $meta+$shift+l move right
 
 # move workspaces between monitors
-bindsym $mod+Prior move workspace to output left
-bindsym $mod+Next move workspace to output right
+bindsym $meta+$page_up move workspace to output left
+bindsym $meta+$page_down move workspace to output right
 
 # gaps/fullscreen
 bindsym $meta+g gaps inner current plus 4
