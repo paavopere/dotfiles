@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=XSession
-Exec=/usr/local/bin/plasma-i3.sh
-DesktopNames=KDE
-Name=plasma-i3
-X-KDE-PluginInfo-Version=5.22.4
