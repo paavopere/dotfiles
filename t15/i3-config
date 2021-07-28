@@ -41,8 +41,6 @@ for_window [class="^.*"] border pixel 2
 #smart_gaps on
 #smart_borders on
 
-bar {}
-
 # kill some misbehaving plasma popups
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
 
@@ -144,3 +142,27 @@ bindsym $meta+$shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $meta+space focus mode_toggle
+
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+    bindsym h resize shrink width 5 px or 5 ppt
+    bindsym j resize grow height 5 px or 5 ppt
+    bindsym k resize shrink height 5 px or 5 ppt
+    bindsym l resize grow width 5 px or 5 ppt
+    bindsym Shift+h resize shrink width 1 px or 1 ppt
+    bindsym Shift+j resize grow height 1 px or 1 ppt
+    bindsym Shift+k resize shrink height 1 px or 1 ppt
+    bindsym Shift+l resize grow width 1 px or 1 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $meta+r mode "default"
+}
+
+bindsym $meta+r mode "resize"
+
+
+bar {
+    tray_output none
+}
