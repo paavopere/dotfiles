@@ -8,3 +8,4 @@ sudo chmod u+x /usr/local/bin/plasma-i3-b.sh
 cp -vi i3-config ~/.config/i3/config
 cp -vi .gitconfig ~/
 cp -vi .gitignore_global ~/
+cp -vi picom.conf ~/.config/picom/

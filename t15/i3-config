@@ -45,6 +45,11 @@ for_window [class="^.*"] border pixel 2
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
 
 
+# === Autostarts ===
+
+exec_always --no-startup-id picom --experimental-backends -b
+
+
 # === Bindsyms ===
 
 # switch to workspace
@@ -159,8 +164,11 @@ mode "resize" {
     bindsym Escape mode "default"
     bindsym $meta+r mode "default"
 }
-
 bindsym $meta+r mode "resize"
+
+# compositor
+bindsym $meta+$shift+x exec "killall picom"
+bindsym $meta+x exec "picom --experimental-backends -b"
 
 
 bar {
