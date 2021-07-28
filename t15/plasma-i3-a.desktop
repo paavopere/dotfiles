@@ -1,9 +1,9 @@
 # "Plasma + i3, variant A"
-# here, we have a one-liner Exec: specify KDEWM and run Plasma
+# here, we have a one-liner Exec: specify KDEWM and run Plasma (wrapped in ssh-agent)
 
 [Desktop Entry]
 Type=XSession
-Exec=env KDEWM=/usr/bin/i3 /usr/bin/startplasma-x11
+Exec=env KDEWM=/usr/bin/i3 ssh-agent /usr/bin/startplasma-x11
 DesktopNames=KDE
 Name=plasma-i3-a
 X-KDE-PluginInfo-Version=5.22.4
