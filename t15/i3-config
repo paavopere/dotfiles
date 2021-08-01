@@ -48,7 +48,7 @@ for_window [title="Desktop — Plasma"] kill; floating enable; border none
 # === Autostarts ===
 
 exec_always --no-startup-id picom --experimental-backends -b
-exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id sleep 3 && nitrogen --restore
 
 # === Bindsyms ===
 
