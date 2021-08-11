@@ -43,6 +43,11 @@ for_window [class="^.*"] border pixel 2
 
 # kill some misbehaving plasma popups
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
+#for_window [class="ksplashqml"] kill; floating enable; border none
+exec_always --no-startup-id killall ksplashqml
+
+# don't focus plasma popups & stuff
+no_focus [class="plasmashell"]
 
 
 # === Autostarts ===
