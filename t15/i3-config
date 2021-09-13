@@ -176,7 +176,8 @@ bindsym $meta+$shift+x exec "killall picom"
 bindsym $meta+x exec "picom --experimental-backends -b"
 
 # rofi
-bindsym $meta+d exec "rofi -modi window,windowcd,run,drun,keys,filebrowser -show drun"
+bindsym $meta+d exec "rofi -modi window,windowcd,run,drun,emoji,filebrowser -show drun"
+bindsym $meta+$shift+d exec "krunner"
 
 
 bar {
