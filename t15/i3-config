@@ -175,6 +175,9 @@ bindsym $meta+r mode "resize"
 bindsym $meta+$shift+x exec "killall picom"
 bindsym $meta+x exec "picom --experimental-backends -b"
 
+# rofi
+bindsym $meta+d exec "rofi -modi window,windowcd,run,drun,keys,filebrowser -show drun"
+
 
 bar {
     tray_output none
