@@ -176,7 +176,9 @@ bindsym $meta+$shift+x exec "killall picom"
 bindsym $meta+x exec "picom --experimental-backends -b"
 
 # rofi
-bindsym $meta+d exec "rofi -modi window,windowcd,run,drun,emoji,filebrowser -show drun"
+# - win+d and win+shift+d to switch modes forward/backward
+bindsym $meta+d exec "rofi -modi window,windowcd,run,drun,emoji,filebrowser -show drun -kb-mode-next 'Super+d' -kb-mode-previous 'Super+D'"
+# krunner
 bindsym $meta+$shift+d exec "krunner"
 
 
