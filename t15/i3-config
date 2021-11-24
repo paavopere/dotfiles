@@ -131,6 +131,9 @@ bindsym $meta+$shift+f gaps inner current toggle 20
 bindsym $meta+Return exec $term
 bindsym $meta+$shift+Return exec $term_float
 
+# browser
+bindsym $meta+c exec qutebrowser 
+
 # splitty actions
 bindsym $meta+v split toggle
 bindsym $meta+$shift+v focus parent
