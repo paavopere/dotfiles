@@ -149,6 +149,9 @@ bindsym $meta+z scratchpad show
 bindsym $meta+$shift+c reload
 bindsym $meta+$shift+r restart
 
+# screen lock
+bindsym $ctrl+$alt+l exec "i3lock -c 0000ff"
+
 # kill focused window
 bindsym $meta+$shift+q kill
 
@@ -182,12 +185,9 @@ bindsym $meta+x exec "picom --experimental-backends -b"
 
 # rofi
 # - win+d and win+shift+d to switch modes forward/backward
-bindsym $meta+d exec "rofi -modi window,windowcd,run,drun,emoji,filebrowser -show drun -kb-mode-next 'Super+d' -kb-mode-previous 'Super+D'"
+bindsym $meta+d exec "rofi -modi window,run,drun,emoji,filebrowser -show drun -kb-mode-next 'Super+d' -kb-mode-previous 'Super+D'"
 # krunner
 bindsym $meta+$shift+d exec "krunner"
-
-# notifications (dunst)
-
 
 
 bar {
