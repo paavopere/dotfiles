@@ -11,3 +11,4 @@ cp -vi .gitignore_global ~/
 cp -vi picom.conf ~/.config/picom/
 cp -vi alacritty.yml ~/.config/alacritty/
 cp -vi .xsession ~/
+cp -vi i3status-config ~/.config/i3status/config
