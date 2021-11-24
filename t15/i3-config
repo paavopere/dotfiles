@@ -54,6 +54,8 @@ no_focus [class="plasmashell"]
 
 exec_always --no-startup-id picom --experimental-backends -b
 exec_always --no-startup-id sleep 3 && nitrogen --restore
+# should just run on boot but whatevs
+exec_always --no-startup-id dunst
 
 # === Bindsyms ===
 
@@ -183,6 +185,9 @@ bindsym $meta+x exec "picom --experimental-backends -b"
 bindsym $meta+d exec "rofi -modi window,windowcd,run,drun,emoji,filebrowser -show drun -kb-mode-next 'Super+d' -kb-mode-previous 'Super+D'"
 # krunner
 bindsym $meta+$shift+d exec "krunner"
+
+# notifications (dunst)
+
 
 
 bar {
