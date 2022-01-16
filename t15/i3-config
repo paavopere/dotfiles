@@ -150,7 +150,7 @@ bindsym $meta+$shift+c reload
 bindsym $meta+$shift+r restart
 
 # screen lock
-bindsym $ctrl+$alt+l exec "i3lock -c 0000ff"
+bindsym $meta+$alt+l exec "i3lock -c 0000ff"
 
 # kill focused window
 bindsym $meta+$shift+q kill
@@ -160,6 +160,11 @@ bindsym $meta+$shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $meta+space focus mode_toggle
+
+# switch screen layouts
+bindsym $meta+s exec "~/.screenlayout/laptop-only.sh"
+bindsym $meta+$shift+s exec "~/.screenlayout/office-3-externals.sh"
+bindsym $meta+$ctrl+s exec "~/.screenlayout/home-2-externals.sh"
 
 
 # resize window (you can also use the mouse for that)
