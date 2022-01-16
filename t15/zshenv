@@ -1,0 +1,6 @@
+export HELLO_FROM_ZSHENV=haha
+
+alias jl='conda activate base; jupyter lab --no-browser'
+alias lets-able='conda activate able-dev; cd ~/dd-repos/data-team-tools/able'
+alias o='xdg-open'
+alias selp='~/selp/.venv/bin/python -m selp'
