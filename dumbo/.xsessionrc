@@ -1,3 +1,0 @@
-
-wal -R
-export XSESSIONFOO=bar2
