@@ -12,3 +12,8 @@ cp -vi picom.conf ~/.config/picom/
 cp -vi alacritty.yml ~/.config/alacritty/
 cp -vi .xsession ~/
 cp -vi i3status-config ~/.config/i3status/config
+cp -rvi .screenlayout ~/
+cp -vi ./qutebrowser-config.py ~/.config/qutebrowser/config.py
+cp -vi ./zshenv ~/.zshenv
+cp -vi ./zshrc ~/.zshrc
+
