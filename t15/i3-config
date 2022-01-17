@@ -56,6 +56,7 @@ exec_always --no-startup-id picom --experimental-backends -b
 exec_always --no-startup-id sleep 3 && nitrogen --restore
 # should just run on boot but whatevs
 exec_always --no-startup-id dunst
+exec_always --no-startup-id "HOME=$HOME/.dropbox-personal $HOME/.dropbox-personal/.dropbox-dist/dropboxd"
 
 # === Bindsyms ===
 
@@ -164,7 +165,8 @@ bindsym $meta+space focus mode_toggle
 # switch screen layouts
 bindsym $meta+s exec "~/.screenlayout/laptop-only.sh"
 bindsym $meta+$shift+s exec "~/.screenlayout/office-3-externals.sh"
-bindsym $meta+$ctrl+s exec "~/.screenlayout/home-2-externals.sh"
+bindsym $meta+$ctrl+s exec "~/.screenlayout/home-2-externals-v-h.sh"
+bindsym $meta+$ctrl+$shift+s exec "~/.screenlayout/home-2-externals-v-v.sh"
 
 
 # resize window (you can also use the mouse for that)
