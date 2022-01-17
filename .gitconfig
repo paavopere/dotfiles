@@ -1,0 +1,11 @@
+[init]
+	defaultBranch = main
+[user]
+	email = paavo@pere.fi
+	name = Paavo Pere
+[github]
+	user = paavopere
+[gitlab]
+	user = ppere
+[core]
+	editor = vim
