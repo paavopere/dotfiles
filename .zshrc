@@ -1,1 +1,0 @@
-.zshrc##class.futu-mbp
