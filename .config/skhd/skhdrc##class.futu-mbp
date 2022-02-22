@@ -5,30 +5,47 @@ alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
 
 #### move windows within space
+## by swapping
 alt + shift - h : yabai -m window --swap west
 alt + shift - j : yabai -m window --swap south
 alt + shift - k : yabai -m window --swap north
 alt + shift - l : yabai -m window --swap east
+## by warping
+alt + ctrl - h  : yabai -m window --warp west
+alt + ctrl - j  : yabai -m window --warp south
+alt + ctrl - k  : yabai -m window --warp north
+alt + ctrl - l  : yabai -m window --warp east
 
 
-alt - f : yabai -m window --toggle zoom-fullscreen
+alt - f             : yabai -m window --toggle zoom-fullscreen
+alt - space         : yabai -m window --toggle float
+# cycle between autoraise and off
+alt + shift - space : current=`yabai -m config focus_follows_mouse` && \
+                      if [ $current = 'autoraise' ]; \
+                          then yabai -m config focus_follows_mouse off; \
+                          else yabai -m config focus_follows_mouse autoraise; \
+                      fi
+alt - v             : yabai -m window --toggle split
 
+# gaps
 alt - g         : yabai -m space --gap rel:10; \
                   yabai -m space --padding rel:10:10:10:10
 alt + shift - g : yabai -m space --gap rel:-10; \
                   yabai -m space --padding rel:-10:-10:-10:-10
 
 #### focus spaces
-alt - 1 : yabai -m space --focus 1
-alt - 2 : yabai -m space --focus 2
-alt - 3 : yabai -m space --focus 3
-alt - 4 : yabai -m space --focus 4
-alt - 5 : yabai -m space --focus 5
-alt - 6 : yabai -m space --focus 6
-alt - 7 : yabai -m space --focus 7
-alt - 8 : yabai -m space --focus 8
-alt - 9 : yabai -m space --focus 9
-alt - 0 : yabai -m space --focus 10
+## would require disabling SIP
+## something similar doable with Mission Control shortcuts
+# alt - 1 : yabai -m space --focus 1
+# alt - 2 : yabai -m space --focus 2
+# alt - 3 : yabai -m space --focus 3
+# alt - 4 : yabai -m space --focus 4
+# alt - 5 : yabai -m space --focus 5
+# alt - 6 : yabai -m space --focus 6
+# alt - 7 : yabai -m space --focus 7
+# alt - 8 : yabai -m space --focus 8
+# alt - 9 : yabai -m space --focus 9
+# alt - 0 : yabai -m space --focus 10
 
 #### move windows to spaces
 alt + shift - 1 : yabai -m window --space 1
@@ -46,10 +63,17 @@ alt + shift - 0 : yabai -m window --space 10
 # alt + shift - q : osascript -e 'tell application "System Events" to perform action "AXPress" of (first button whose subrole is "AXCloseButton") of (first window whose subrole is "AXStandardWindow") of (first process whose frontmost is true)'
 alt + shift - q : yabai -m window --close
 
-#### 0x18 = '=', 0x1B = '-'
-alt - 0x18 : yabai -m space --create
-alt - 0x1B : yabai -m space --destroy
+#### create/destroy spaces
+## would require disabling SIP
+## 0x18 = '=', 0x1B = '-'
+# alt - 0x18 : yabai -m space --create
+# alt - 0x1B : yabai -m space --destroy
 
-alt - return           : open -a iTerm.app -n
-alt + shift - return   : kitty --single-instance -d ~
+#### open apps
+## terminals
+alt - return         : kitty --single-instance -d ~
+alt + shift - return : open -a iTerm.app -n
 # alt + shift - return : alacritty
+## browsers
+alt - c              : open -a Safari -n
+alt + shift - c      : open -a Qutebrowser -n

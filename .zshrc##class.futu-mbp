@@ -12,8 +12,8 @@ zstyle :compinstall filename $HOME/.zshrc
 
 autoload -Uz compinit promptinit
 compinit
-promptinit
-prompt walters
+#promptinit
+#prompt walters
 # End of lines added by compinstall
 
 HISTFILE=~/.zsh_history
@@ -28,10 +28,31 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
-antigen theme robbyrussell
+antigen bundle esc/conda-zsh-completion
+antigen theme refined
 antigen apply
 
 
 alias vi="vim"
 EDITOR=vim
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/paavo.pere@futurice.com/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/paavo.pere@futurice.com/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/paavo.pere@futurice.com/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/paavo.pere@futurice.com/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/Users/paavo.pere@futurice.com/miniconda3/etc/profile.d/mamba.sh" ]; then
+    . "/Users/paavo.pere@futurice.com/miniconda3/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
 
