@@ -1,8 +1,12 @@
 #### focus windows within space
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
+#### or if we're on the edge, focus another display
+alt - h : yabai -m window --focus west || yabai -m display --focus west
+alt - j : yabai -m window --focus south || yabai -m display --focus south
+alt - k : yabai -m window --focus north || yabai -m display --focus north
+alt - l : yabai -m window --focus east || yabai -m display --focus east
+
+# period
+alt - 0x2F : yabai -m window --focus recent
 
 #### move windows within space
 ## by swapping
