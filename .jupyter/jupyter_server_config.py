@@ -977,7 +977,7 @@
 
 ## Allow access to hidden files
 #  Default: False
-# c.ContentsManager.allow_hidden = False
+c.ContentsManager.allow_hidden = True
 
 #  Default: None
 # c.ContentsManager.checkpoints = None
