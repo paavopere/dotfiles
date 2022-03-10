@@ -76,8 +76,8 @@ alt + shift - q : yabai -m window --close
 #### open apps
 ## terminals
 alt - return         : kitty --single-instance -d ~
-alt + shift - return : open -a iTerm.app -n
+alt + shift - return : open -a kitty -n
 # alt + shift - return : alacritty
 ## browsers
-alt - c              : open -a Safari -n
+alt - c              : open -a Firefox -n
 alt + shift - c      : open -a Qutebrowser -n

@@ -17,3 +17,4 @@ yabai -m config active_window_opacity 1.0
 yabai -m config normal_window_opacity 0.8
 
 yabai -m rule --add label="System Preferences" app="^System Preferences$" title=".*" manage=off
+yabai -m rule --add label="Godot" app="^Godot$" title="^.*\(DEBUG\)$" manage=off
