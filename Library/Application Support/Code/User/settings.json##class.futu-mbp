@@ -1,0 +1,6 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "editor.fontFamily": "'Victor Mono', Menlo, Monaco, 'Courier New', monospace",
+    "git.autofetch": true,
+    "files.autoSave": "onFocusChange"
+}
