@@ -4,6 +4,7 @@
     "editor.fontFamily": "'Victor Mono', monospace",
     "git.autofetch": true,
     "git.confirmSync": false,
+    "terminal.integrated.inheritEnv": false,
     "jupyter.askForKernelRestart": false,
-    "terminal.integrated.inheritEnv": false
+    "jupyter.experiments.enabled": false
 }
