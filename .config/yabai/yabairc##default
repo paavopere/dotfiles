@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+yabai -m config debug_output on
+
 yabai -m config layout bsp
 yabai -m config focus_follows_mouse autoraise
 yabai -m config mouse_follows_focus on
