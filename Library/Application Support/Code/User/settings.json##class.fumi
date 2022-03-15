@@ -1,0 +1,9 @@
+{
+    "workbench.colorTheme": "Shades of Purple",
+    "files.autoSave": "afterDelay",
+    "editor.fontFamily": "'Victor Mono', monospace",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "jupyter.askForKernelRestart": false,
+    "terminal.integrated.inheritEnv": false
+}
