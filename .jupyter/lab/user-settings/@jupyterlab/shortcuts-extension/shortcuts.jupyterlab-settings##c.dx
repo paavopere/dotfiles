@@ -1,0 +1,9 @@
+{
+    "shortcuts": [
+        {
+            "command": "runmenu:restart-and-run-all",
+            "keys": ["0", "2"],
+            "selector": ".jp-Notebook:focus"
+        }
+    ]
+}
