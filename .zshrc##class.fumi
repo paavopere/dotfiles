@@ -28,6 +28,8 @@ antigen apply
 
 
 alias vi="vim"
+alias selp="$HOME/projects/selp/env/bin/selp"
+
 EDITOR=vim
 
 
