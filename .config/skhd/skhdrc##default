@@ -79,5 +79,5 @@ alt - return         : kitty --single-instance -d ~
 alt + shift - return : open -a kitty -n
 # alt + shift - return : alacritty
 ## browsers
-alt - c              : open -a Firefox -n
-alt + shift - c      : open -a Qutebrowser -n
+alt - c              : open -na Firefox
+alt + shift - c      : open -na Qutebrowser
