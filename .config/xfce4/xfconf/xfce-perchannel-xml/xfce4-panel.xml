@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="int" value="2"/>
+  <property name="panels" type="array">
+    <value type="int" value="1"/>
+    <property name="dark-mode" type="bool" value="true"/>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=6;x=0;y=0"/>
+      <property name="length" type="uint" value="100"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="icon-size" type="uint" value="16"/>
+      <property name="size" type="uint" value="30"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="16"/>
+        <value type="int" value="5"/>
+        <value type="int" value="1"/>
+        <value type="int" value="6"/>
+        <value type="int" value="8"/>
+        <value type="int" value="9"/>
+        <value type="int" value="10"/>
+        <value type="int" value="12"/>
+        <value type="int" value="14"/>
+      </property>
+      <property name="mode" type="uint" value="0"/>
+      <property name="autohide-behavior" type="uint" value="0"/>
+      <property name="nrows" type="uint" value="1"/>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-5" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="true"/>
+    </property>
+    <property name="plugin-6" type="string" value="systray">
+      <property name="square-icons" type="bool" value="true"/>
+      <property name="known-items" type="array">
+        <value type="string" value="dropbox-client-24116"/>
+        <value type="string" value="dropbox-client-1647"/>
+        <value type="string" value="dropbox-client-1044"/>
+        <value type="string" value="dropbox-client-1046"/>
+        <value type="string" value="dropbox-client-1024"/>
+        <value type="string" value="dropbox-client-32783"/>
+        <value type="string" value="dropbox-client-17281"/>
+        <value type="string" value="dropbox-client-1030"/>
+        <value type="string" value="dropbox-client-1061"/>
+        <value type="string" value="dropbox-client-1082"/>
+        <value type="string" value="dropbox-client-1209"/>
+        <value type="string" value="dropbox-client-1105"/>
+        <value type="string" value="dropbox-client-1721"/>
+        <value type="string" value="dropbox-client-1102"/>
+        <value type="string" value="dropbox-client-1020"/>
+        <value type="string" value="dropbox-client-10213"/>
+        <value type="string" value="dropbox-client-1103"/>
+        <value type="string" value="dropbox-client-1010"/>
+        <value type="string" value="dropbox-client-1634"/>
+        <value type="string" value="dropbox-client-1166"/>
+        <value type="string" value="dropbox-client-1148"/>
+        <value type="string" value="dropbox-client-706"/>
+        <value type="string" value="dropbox-client-889"/>
+        <value type="string" value="dropbox-client-620"/>
+        <value type="string" value="dropbox-client-1076"/>
+        <value type="string" value="dropbox-client-1543"/>
+        <value type="string" value="dropbox-client-995"/>
+        <value type="string" value="dropbox-client-678"/>
+        <value type="string" value="dropbox-client-1926"/>
+        <value type="string" value="dropbox-client-1004"/>
+        <value type="string" value="dropbox-client-608"/>
+        <value type="string" value="dropbox-client-6076"/>
+        <value type="string" value="dropbox-client-929"/>
+        <value type="string" value="dropbox-client-1244"/>
+        <value type="string" value="dropbox-client-639"/>
+        <value type="string" value="dropbox-client-597"/>
+        <value type="string" value="dropbox-client-954"/>
+        <value type="string" value="dropbox-client-6999"/>
+        <value type="string" value="blueman"/>
+        <value type="string" value="dropbox-client-1524"/>
+        <value type="string" value="dropbox-client-1162"/>
+        <value type="string" value="dropbox-client-56398"/>
+        <value type="string" value="dropbox-client-55294"/>
+        <value type="string" value="dropbox-client-54753"/>
+      </property>
+      <property name="known-legacy-items" type="array">
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="bluetooth enabled"/>
+        <value type="string" value="networkmanager applet"/>
+      </property>
+    </property>
+    <property name="plugin-8" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="show-notifications" type="bool" value="true"/>
+      <property name="mpris-players" type="string" value="chromium.instance1659;chromium.instance47423;chromium.instance970;firefox.instance107630;firefox.instance1169;firefox.instance1382;firefox.instance174747;firefox.instance1963;firefox.instance58354;firefox.instance62030;firefox.instance70667;firefox.instance9726;qutebrowser.instance1065;qutebrowser.instance1434;qutebrowser.instance14814;qutebrowser.instance213212;qutebrowser.instance2266;qutebrowser.instance3625;qutebrowser.instance731;qutebrowser.instance740;qutebrowser.instance852;qutebrowser.instance911;spotify"/>
+    </property>
+    <property name="plugin-9" type="string" value="power-manager-plugin"/>
+    <property name="plugin-10" type="string" value="notification-plugin"/>
+    <property name="plugin-12" type="string" value="clock">
+      <property name="mode" type="uint" value="2"/>
+      <property name="digital-format" type="string" value="&lt;span alpha=&quot;30000&quot; weight=&quot;bold&quot; size=&quot;x-small&quot;&gt;W%V %a&lt;/span&gt;  &lt;span font=&quot;Source Code Pro&quot;&gt;&lt;span alpha=&quot;30000&quot;&gt;%Y-%m-%d&lt;/span&gt; %H:%M:%S&lt;/span&gt; &lt;span alpha=&quot;30000&quot; weight=&quot;bold&quot; size=&quot;x-small&quot;&gt;%Z&lt;/span&gt;"/>
+      <property name="tooltip-format" type="string" value="Week %V"/>
+    </property>
+    <property name="plugin-16" type="string" value="whiskermenu"/>
+    <property name="plugin-14" type="string" value="cpugraph"/>
+    <property name="plugin-1" type="string" value="genmon"/>
+  </property>
+</channel>
