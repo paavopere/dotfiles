@@ -3,7 +3,10 @@
 yabai -m config debug_output on
 
 yabai -m config layout bsp
-yabai -m config focus_follows_mouse autoraise
+
+# # let autoraise (https://github.com/sbmpost/AutoRaise) handle this because yabai's feature doesn't work with hazeover
+# yabai -m config focus_follows_mouse autoraise
+
 yabai -m config mouse_follows_focus on
 yabai -m config window_topmost on
 # yabai -m config window_shadow on

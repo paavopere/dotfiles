@@ -1,0 +1,6 @@
+#AutoRaise config file
+delay=1 
+warpX=0
+warpY=0
+scale=2.0
+verbose=true
