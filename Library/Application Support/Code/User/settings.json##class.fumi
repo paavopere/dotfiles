@@ -1,10 +1,12 @@
 {
-    "workbench.colorTheme": "Shades of Purple",
+    "workbench.colorTheme": "Night Owl Light",
     "files.autoSave": "afterDelay",
     "editor.fontFamily": "'Victor Mono', monospace",
     "git.autofetch": true,
     "git.confirmSync": false,
     "terminal.integrated.inheritEnv": false,
     "jupyter.askForKernelRestart": false,
-    "jupyter.experiments.enabled": false
+    "jupyter.experiments.enabled": false,
+    "notebook.output.textLineLimit": 100,
+    "python.formatting.provider": "yapf"
 }

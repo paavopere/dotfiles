@@ -6,13 +6,33 @@
         "when": "notebookEditorFocused && !inputFocus"
     },
     {
-        "key": "2 2",
-        "command": "jupyter.runallcells",
-        "when": "notebookEditorFocused && !inputFocus"
-    },
-    {
         "key": "- -",
         "command": "notebook.cell.collapseAllCellOutputs",
         "when": "notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "2 2",
+        "command": "notebook.execute",
+        "when": "notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "m",
+        "command": "notebook.cell.changeToMarkdown",
+        "when": "notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "m",
+        "command": "-notebook.cell.changeToMarkdown",
+        "when": "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook' && notebookCellType == 'code'"
+    },
+    {
+        "key": "y",
+        "command": "notebook.cell.changeToCode",
+        "when": "notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "y",
+        "command": "-notebook.cell.changeToCode",
+        "when": "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook' && notebookCellType == 'markup'"
     }
 ]
