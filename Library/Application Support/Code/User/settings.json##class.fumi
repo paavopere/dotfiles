@@ -1,5 +1,4 @@
 {
-    "workbench.colorTheme": "Night Owl Light",
     "files.autoSave": "afterDelay",
     "editor.fontFamily": "'Victor Mono', monospace",
     "git.autofetch": true,
@@ -8,5 +7,16 @@
     "jupyter.askForKernelRestart": false,
     "jupyter.experiments.enabled": false,
     "notebook.output.textLineLimit": 100,
-    "python.formatting.provider": "yapf"
+    "python.formatting.provider": "yapf",
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "files.insertFinalNewline": true,
+    "workbench.colorTheme": "Night Owl (No Italics)",
+    "pythonIndent.trimLinesWithOnlyWhitespace": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.stickyScroll.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "editor.rulers": [
+        100
+    ],
+    "window.zoomLevel": 1
 }
