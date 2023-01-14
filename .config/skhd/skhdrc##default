@@ -75,7 +75,7 @@ alt + shift - q : yabai -m window --close
 
 #### open apps
 ## terminals
-alt - return         : alacritty
+alt - return         : open -na Alacritty
 alt + shift - return : kitty --single-instance -d ~
 # alt + shift - return : open -a kitty -n
 ## browsers
