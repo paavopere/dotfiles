@@ -2,3 +2,19 @@ font:
   normal:
     family: Victor Mono
   size: 15.0
+
+window:
+  # Window decorations
+  #
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  #
+  # Values for `decorations` (macOS only):
+  #     - transparent: Title bar, transparent background and title bar buttons
+  #     - buttonless: Title bar, transparent background and no title bar buttons
+  decorations: buttonless
+  opacity: 0.8
+  padding:
+    x: 5
+    y: 5
