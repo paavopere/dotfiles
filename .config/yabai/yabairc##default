@@ -5,7 +5,7 @@ yabai -m config debug_output on
 yabai -m config layout bsp
 
 # # let autoraise (https://github.com/sbmpost/AutoRaise) handle this because yabai's feature doesn't work with hazeover
-# yabai -m config focus_follows_mouse autoraise
+ yabai -m config focus_follows_mouse autoraise
 
 yabai -m config mouse_follows_focus on
 yabai -m config window_topmost on
@@ -22,4 +22,8 @@ yabai -m config active_window_opacity 1.0
 yabai -m config normal_window_opacity 0.8
 
 yabai -m rule --add label="System Preferences" app="^System Preferences$" title=".*" manage=off
+yabai -m rule --add label="LibreOffice" app="^LibreOffice$" title=".*" manage=off
 yabai -m rule --add label="Godot" app="^Godot$" title="^.*\(DEBUG\)$" manage=off
+yabai -m rule --add label="Obsidian" app="Obsidian" manage=off
+yabai -m rule --add label="OSDUIHelper" app="OSDUIHelper" manage=off
+# yabai -m rule --add label="1Password 7" app="^1Password 7$" title=".*" manage=off
