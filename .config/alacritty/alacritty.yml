@@ -18,3 +18,7 @@ window:
   padding:
     x: 5
     y: 5
+
+key_bindings:
+  - { key: Left,     mods: Alt,     chars: "\x1bb"                       } # one word left
+  - { key: Right,    mods: Alt,     chars: "\x1bf"                       } # one word right
