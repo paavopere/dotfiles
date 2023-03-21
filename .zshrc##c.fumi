@@ -34,6 +34,9 @@ alias selp="$HOME/projects/selp/env/bin/selp"
 
 EDITOR=vim
 
+# make run-help more useful
+unalias run-help
+autoload -U run-help
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -58,3 +61,7 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+bindkey "^Q" fzf-cd-widget
