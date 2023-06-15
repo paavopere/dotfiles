@@ -4,3 +4,4 @@ fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=true 
 
 alias tf=terraform
+

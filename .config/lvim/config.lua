@@ -38,10 +38,29 @@ lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q
 lvim.plugins = {
   { "folke/trouble.nvim", cmd = "TroubleToggle", },
   { "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim", config = function() require('toggle_lsp_diagnostics').init() end },
-  { "Pocco81/auto-save.nvim", config = function() require("auto-save").setup() end, },
+  -- { "Pocco81/auto-save.nvim", config = function() require("auto-save").setup() end, },
   { "github/copilot.vim" },
   { "tpope/vim-surround" },
 }
+
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.g.copilot_tab_fallback = ""
+vim.b.copilot_enabled = false
+
+local cmp = require "cmp"
+lvim.builtin.cmp.mapping["<C-r>"] = function(fallback)
+  cmp.mapping.abort()
+  local copilot_keys = vim.fn["copilot#Accept"]()
+  if copilot_keys ~= "" then
+    vim.api.nvim_feedkeys(copilot_keys, "i", true)
+  else
+    fallback()
+  end
+end
+
+-- lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
+-- table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
 
 -- Use which-key to add extra bindings with the leader-key prefix
 
@@ -122,22 +141,5 @@ local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   { command = "flake8", filetypes = { "python" } },
 }
-
--- configurations for copilot
-
--- vim.g.copilot_no_tab_map = true
--- vim.g.copilot_assume_mapped = true
--- vim.g.copilot_tab_fallback = true
--- local cmp = require "cmp"
--- lvim.builtin.cmp.mapping["<C-r>"] = function(fallback)
---   cmp.mapping.abort()
---   local copilot_keys = vim.fn["copilot#Accept"]()
---   if copilot_keys ~= "" then
---     vim.api.nvim_feedkeys(copilot_keys, "i", true)
---   else
---     fallback()
---   end
--- end
-
 
 vim.opt.timeoutlen = 250
