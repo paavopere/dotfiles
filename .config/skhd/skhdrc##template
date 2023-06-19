@@ -75,9 +75,11 @@ alt + shift - q : yabai -m window --close
 
 #### open apps
 ## terminals
+{% if yadm.class == "fumi2" %}
+alt - return         : open -na iTerm
+{% else %}
 alt - return         : open -na Alacritty
-alt + shift - return : kitty --single-instance -d ~
-# alt + shift - return : open -a kitty -n
+{% endif %}
 ## browsers
 alt - c              : open -na Firefox
 alt + shift - c      : open -na Qutebrowser
